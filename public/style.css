@@ -1,0 +1,265 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.grid-wrapper {
+    display: grid;
+    align-items: start;    /* 垂直靠上 */
+    justify-content: start; /* 水平靠左 */
+    padding: 20px 20px;
+}
+
+.text {
+    font-size: 22px;          /* 設定字型大小為 20px */
+    font-weight: bold;        /* 設定字型為粗體 */
+    font-family: Arial, sans-serif;
+
+}
+.welcome-block {
+    padding-top: 47px; /* 與上方區塊有點距離 */
+}
+
+.welcome {
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+
+}
+.input-block {
+    padding-top: 30px;
+    display: flex;
+    width: 100%; /* 改成 100%，讓容器填滿父元素 */
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.input-box {
+    width: 340px; /* 固定寬度為 350px */
+    padding: 17px;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+
+}
+.input-box:focus {
+    border-color: #10a27e;
+    outline: none;
+    background: transparent;
+}
+.input-box:focus-visible {
+    outline: none;
+    background: transparent;
+}
+
+.input-group {
+    position: relative;
+    width: 340px;
+}
+
+.floating-label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 17px;
+    color: #999;
+    background: white;
+    padding: 0 4px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+
+}
+.google-block {
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+.google-button {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 圖與字的間距 */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+    width: 340px;
+    height: 53px;
+}
+
+.google-button:hover {
+    background-color: #f5f5f5;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* 當輸入框有焦點或有值時，label 上移縮小 */
+/* 浮動標籤：輸入框有焦點或已輸入文字時 */
+.input-box:focus + .floating-label,
+.input-box:valid + .floating-label {
+    top: -8px;
+    left: 15px;
+    font-size: 13px;
+    color: #10a27e; /* 與框框 focus 顏色一致 */
+}
+
+.input-box.error {
+    border-color: red;
+}
+
+.input-box.error:focus + .floating-label,
+.input-box.error + .floating-label {
+    color: red !important;
+}
+
+.floating-label.error {
+    color: red; /* 與框框 error 顏色一致 */
+}
+
+.floating-label.float {
+    top: -8px;
+    left: 15px;
+    font-size: 13px;
+    color: #fd0000; /* 與 error 顏色一致，建議改為 red (#ff0000) 或與 .input-box.error 一致 */
+}
+
+.input-error-message {
+    display: flex;
+    align-items: center;
+    color: red;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 2px;
+    gap: 6px;
+}
+.error-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffeded;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 2px;
+}
+.error-text {
+    color: red;
+}
+
+.button-block {
+    padding-top: 27px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-button {
+    padding: 12px 24px;
+    width: 340px;
+    height: 50px;
+    font-size: 17px;
+    background-color: #10a27e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #0e8e6e;
+}
+
+.signup-text {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+}
+
+.signup-text a {
+    color: #10a17d;
+    text-decoration: none;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 18px auto;
+    width: 340px;          /* 整體寬度，可視情況調整 */
+    color: #000000;
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eaeaea;
+}
+.divider::before {
+    margin-right: 13px;
+}
+.divider::after {
+    margin-left: 13px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #5c5c5c;
+    margin-top: 40px;
+    padding: 20px 0;
+
+}
+
+.footer a {
+    color: #10a17d;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+.divider-endline {
+    display: inline-block;
+    width: 1.5px;
+    height: 14px;
+    background-color: #5c5c5c;
+    vertical-align: middle;
+    user-select: none;
+}
+
+.password-group-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .grid-wrapper {
+        justify-content: center;  /* 水平置中 */
+        align-items: center;      /* 垂直置中 */
+        margin-top: 13vh;         /* 使容器距離螢幕頂部 50% 的視窗高度 */
+    }
+    .welcome-block {
+        padding-top: 2px; /* 與上方區塊有點距離 */
+    }
+}
